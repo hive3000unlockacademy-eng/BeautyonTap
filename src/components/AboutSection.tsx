@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LOGO_SRC } from "@/lib/constants";
 
 export function AboutSection() {
   return (
@@ -75,8 +76,8 @@ export function AboutSection() {
       <div className="rose-glass text-white hero-cta-text-shadow">
         <div className="max-w-3xl mx-auto pt-12 pb-8">
           <div className="flex justify-center mb-6">
-            <div className="w-44 h-44 rounded-full overflow-hidden hero-cta-backdrop flex items-center justify-center p-1">
-              <Image src="/beauty on tap logo.png" alt="Beauty on Tap Salon logo" width={176} height={176} className="object-contain logo-img" sizes="176px" quality={90} />
+            <div className="w-[220px] h-[220px] rounded-full overflow-hidden logo-backdrop flex items-center justify-center p-1">
+              <Image src={LOGO_SRC} alt="Beauty on Tap Salon logo" width={220} height={220} className="object-contain logo-img" sizes="220px" quality={90} />
             </div>
           </div>
           <h3 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-semibold uppercase tracking-tight text-center">

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { LOGO_SRC } from "@/lib/constants";
 import { useState } from "react";
 import { PrimaryButton } from "./PrimaryButton";
 import { SecondaryButton } from "./SecondaryButton";
@@ -39,8 +40,8 @@ export function HeroWithSidebar() {
 
         {/* Desktop: hero sidebar — rose gold brand glass (.rose-glass); same treatment on About page */}
         <aside className="hidden lg:flex absolute left-0 top-0 bottom-0 z-10 w-[28%] min-w-[240px] max-w-[320px] flex-col py-10 px-6 lg:px-8 rose-glass">
-          <Link href="/" className="block w-36 h-36 relative shrink-0 rounded-full overflow-hidden hero-cta-backdrop flex items-center justify-center p-1">
-            <Image src="/beauty on tap logo.png" alt="Beauty on Tap Salon" width={144} height={144} className="object-contain logo-img" priority sizes="144px" quality={90} />
+          <Link href="/" className="block w-[180px] h-[180px] relative shrink-0 self-center rounded-full overflow-hidden logo-backdrop flex items-center justify-center p-1">
+            <Image src={LOGO_SRC} alt="Beauty on Tap Salon" width={180} height={180} className="object-contain logo-img" priority sizes="180px" quality={90} />
           </Link>
           <nav className="flex flex-col gap-6 mt-8 flex-1">
             {NAV_LINKS.map(({ label, href }) => (
@@ -78,8 +79,8 @@ export function HeroWithSidebar() {
 
       {/* Mobile: hamburger bar */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-3 px-4 rose-glass safe-top">
-        <Link href="/" className="flex w-20 h-20 items-center justify-center rounded-full overflow-hidden hero-cta-backdrop p-1">
-          <Image src="/beauty on tap logo.png" alt="Beauty on Tap Salon" width={80} height={80} className="object-contain logo-img" sizes="80px" quality={90} />
+        <Link href="/" className="flex w-[100px] h-[100px] items-center justify-center rounded-full overflow-hidden logo-backdrop p-1">
+          <Image src={LOGO_SRC} alt="Beauty on Tap Salon" width={100} height={100} className="object-contain logo-img" sizes="100px" quality={90} />
         </Link>
         <button type="button" onClick={() => setMenuOpen(true)} className="touch-target text-white uppercase tracking-wider text-sm py-2 px-4 flex items-center justify-center hero-cta-text-shadow" aria-label="Open menu">Menu</button>
       </div>

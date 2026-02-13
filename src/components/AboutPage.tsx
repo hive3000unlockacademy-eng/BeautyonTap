@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { LOGO_SRC, LOGO_SRC_LIGHT } from "@/lib/constants";
 import { useState } from "react";
 import { InstagramIcon, FacebookIcon } from "./SocialIcons";
 
@@ -34,8 +35,8 @@ export function AboutPage() {
 
         {/* Desktop: hero sidebar — rose gold brand glass (same as home) */}
         <aside className="hidden lg:flex absolute left-0 top-0 bottom-0 z-10 w-[28%] min-w-[240px] max-w-[320px] flex-col py-10 px-6 lg:px-8 rose-glass">
-          <Link href="/" className="block w-36 h-36 relative shrink-0 rounded-full overflow-hidden hero-cta-backdrop flex items-center justify-center p-1">
-            <Image src="/beauty on tap logo.png" alt="Beauty on Tap Salon" width={144} height={144} className="object-contain logo-img" priority sizes="144px" quality={90} />
+          <Link href="/" className="block w-[180px] h-[180px] relative shrink-0 self-center rounded-full overflow-hidden logo-backdrop flex items-center justify-center p-1">
+            <Image src={LOGO_SRC} alt="Beauty on Tap Salon" width={180} height={180} className="object-contain logo-img" priority sizes="180px" quality={90} />
           </Link>
           <nav className="flex flex-col gap-6 mt-8 flex-1">
             {NAV_LINKS.map(({ label, href }) => (
@@ -54,8 +55,8 @@ export function AboutPage() {
           </div>
         </aside>
 
-        {/* Hero content: heading + intro — halfway down, left-aligned; frosted panel for readability */}
-        <div className="relative z-10 min-h-[60vh] flex items-center py-12 pt-20 px-6 md:px-10 lg:absolute lg:top-1/2 lg:left-0 lg:right-0 lg:min-h-0 lg:py-0 lg:pt-0 lg:-translate-y-1/2 lg:pl-[calc(clamp(240px,28%,320px)+1.5rem)] lg:pr-12">
+        {/* Hero content: heading + intro — below header on mobile/tablet; centered on desktop */}
+        <div className="relative z-10 min-h-[60vh] flex items-center py-12 pt-36 md:pt-40 px-6 md:px-10 lg:absolute lg:top-1/2 lg:left-0 lg:right-0 lg:min-h-0 lg:py-0 lg:pt-0 lg:-translate-y-1/2 lg:pl-[calc(clamp(240px,28%,320px)+1.5rem)] lg:pr-12">
           <div className="max-w-2xl w-full text-center lg:text-left rounded-2xl about-hero-cta px-6 py-6 sm:px-8 sm:py-8">
             <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl lg:text-5xl font-semibold text-white uppercase tracking-tight hero-cta-text-shadow">
               About Beauty on Tap
@@ -109,8 +110,8 @@ export function AboutPage() {
           </p>
           {/* Centered logo — positioned below quote, above Our Story section */}
           <div className="flex justify-center mt-10 mb-6">
-            <div className="w-44 h-44 rounded-full overflow-hidden hero-cta-backdrop flex items-center justify-center p-1 ring-2 ring-[var(--charcoal-muted)]/20">
-              <Image src="/beauty on tap logo.png" alt="Beauty on Tap Salon logo" width={176} height={176} className="object-contain logo-img" sizes="176px" quality={90} />
+            <div className="w-[220px] h-[220px] rounded-full overflow-hidden logo-backdrop-on-light flex items-center justify-center p-1">
+              <Image src={LOGO_SRC_LIGHT} alt="Beauty on Tap Salon logo" width={220} height={220} className="object-contain logo-img" sizes="220px" quality={90} />
             </div>
           </div>
         </div>
@@ -146,8 +147,8 @@ export function AboutPage() {
 
       {/* Mobile: hamburger bar */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-3 px-4 rose-glass safe-top">
-        <Link href="/" className="flex w-20 h-20 items-center justify-center rounded-full overflow-hidden hero-cta-backdrop p-1">
-          <Image src="/beauty on tap logo.png" alt="Beauty on Tap Salon" width={80} height={80} className="object-contain logo-img" sizes="80px" quality={90} />
+        <Link href="/" className="flex w-[100px] h-[100px] items-center justify-center rounded-full overflow-hidden logo-backdrop p-1">
+          <Image src={LOGO_SRC} alt="Beauty on Tap Salon" width={100} height={100} className="object-contain logo-img" sizes="100px" quality={90} />
         </Link>
         <button type="button" onClick={() => setMenuOpen(true)} className="touch-target text-white uppercase tracking-wider text-sm py-2 px-4 flex items-center justify-center hero-cta-text-shadow" aria-label="Open menu">Menu</button>
       </div>

@@ -1,3 +1,5 @@
+import { LOGO_SRC } from "@/lib/constants";
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.beautyontapsalon.com";
 
 export function LocalBusinessStructuredData() {
@@ -26,7 +28,7 @@ export function LocalBusinessStructuredData() {
       { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "16:00" },
     ],
     priceRange: "$$",
-    image: `${SITE_URL}/beauty%20on%20tap%20logo.png`,
+    image: `${SITE_URL}${LOGO_SRC.replace(/ /g, "%20")}`,
     sameAs: ["https://instagram.com/[INSTAGRAM]", "https://facebook.com/[FACEBOOK]"],
   };
 
