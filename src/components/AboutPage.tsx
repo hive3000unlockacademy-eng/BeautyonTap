@@ -2,17 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { LOGO_SRC, LOGO_SRC_LIGHT } from "@/lib/constants";
+import { LOGO_SRC, LOGO_SRC_LIGHT, getNavLinks } from "@/lib/constants";
 import { useState } from "react";
 import { InstagramIcon, FacebookIcon } from "./SocialIcons";
 
-const NAV_LINKS = [
-  { label: "HOME", href: "/" },
-  { label: "ABOUT", href: "/about" },
-  { label: "SERVICES", href: "/#services" },
-  { label: "TEAM", href: "/#team" },
-  { label: "CONTACT", href: "/#contact" },
-];
+const NAV_LINKS = getNavLinks({ forAboutPage: true });
 
 export function AboutPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,8 +27,8 @@ export function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-transparent to-transparent" aria-hidden />
         </div>
 
-        {/* Desktop: hero sidebar — rose gold brand glass (same as home) */}
-        <aside className="hidden lg:flex absolute left-0 top-0 bottom-0 z-10 w-[28%] min-w-[240px] max-w-[320px] flex-col py-10 px-6 lg:px-8 rose-glass">
+        {/* Desktop: hero sidebar — rose gold brand glass (same as home); z-20 so nav links are clickable above hero content */}
+        <aside className="hidden lg:flex absolute left-0 top-0 bottom-0 z-20 w-[28%] min-w-[240px] max-w-[320px] flex-col py-10 px-6 lg:px-8 rose-glass">
           <Link href="/" className="block w-[180px] h-[180px] relative shrink-0 self-center rounded-full overflow-hidden logo-backdrop flex items-center justify-center p-1">
             <Image src={LOGO_SRC} alt="Beauty on Tap Salon" width={180} height={180} className="object-contain logo-img" priority sizes="180px" quality={90} />
           </Link>

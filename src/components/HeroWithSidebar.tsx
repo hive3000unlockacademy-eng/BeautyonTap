@@ -2,19 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { LOGO_SRC } from "@/lib/constants";
+import { LOGO_SRC, getNavLinks } from "@/lib/constants";
 import { useState } from "react";
 import { PrimaryButton } from "./PrimaryButton";
 import { SecondaryButton } from "./SecondaryButton";
 import { InstagramIcon, FacebookIcon } from "./SocialIcons";
 
-const NAV_LINKS = [
-  { label: "HOME", href: "/" },
-  { label: "ABOUT", href: "/about" },
-  { label: "SERVICES", href: "#services" },
-  { label: "TEAM", href: "#team" },
-  { label: "CONTACT", href: "#contact" },
-];
+const NAV_LINKS = getNavLinks();
 
 export function HeroWithSidebar() {
   const [menuOpen, setMenuOpen] = useState(false);
