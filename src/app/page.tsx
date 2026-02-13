@@ -68,7 +68,7 @@ export default function Home() {
             <div className="text-center mt-12">
               <Link
                 href="#team"
-                className="inline-flex items-center justify-center rounded-md bg-[var(--rose-panel)] px-6 py-3 text-sm font-medium text-white shadow-md hover:bg-[var(--rose-panel-light)]"
+                className="inline-flex items-center justify-center rounded-md bg-[var(--rose-panel)] px-6 py-3 text-sm font-semibold text-white shadow-md hero-cta-text-shadow hover:bg-[var(--rose-panel-light)]"
               >
                 Meet Our Team
               </Link>

@@ -39,21 +39,21 @@ export function HeroWithSidebar() {
 
         {/* Desktop: hero sidebar — rose gold brand glass (.rose-glass); same treatment on About page */}
         <aside className="hidden lg:flex absolute left-0 top-0 bottom-0 z-10 w-[28%] min-w-[240px] max-w-[320px] flex-col py-10 px-6 lg:px-8 rose-glass">
-          <Link href="/" className="block w-28 h-28 relative shrink-0 rounded-full overflow-hidden hero-cta-backdrop flex items-center justify-center p-1.5">
-            <Image src="/beauty on tap logo.png" alt="Beauty on Tap Salon" width={112} height={112} className="object-contain logo-img" priority />
+          <Link href="/" className="block w-36 h-36 relative shrink-0 rounded-full overflow-hidden hero-cta-backdrop flex items-center justify-center p-1">
+            <Image src="/beauty on tap logo.png" alt="Beauty on Tap Salon" width={144} height={144} className="object-contain logo-img" priority sizes="144px" quality={90} />
           </Link>
           <nav className="flex flex-col gap-6 mt-8 flex-1">
             {NAV_LINKS.map(({ label, href }) => (
-              <Link key={href} href={href} className="text-white uppercase tracking-widest text-sm font-medium hover:opacity-90 transition">
+              <Link key={href} href={href} className="text-white uppercase tracking-widest text-sm font-semibold hover:opacity-90 transition hero-cta-text-shadow">
                 {label}
               </Link>
             ))}
           </nav>
           <div className="flex gap-4 mt-auto pt-6">
-            <a href="https://instagram.com/[INSTAGRAM]" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-80 transition" aria-label="Instagram">
+            <a href="https://instagram.com/[INSTAGRAM]" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-80 transition hero-cta-text-shadow" aria-label="Instagram">
               <InstagramIcon />
             </a>
-            <a href="https://facebook.com/[FACEBOOK]" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-80 transition" aria-label="Facebook">
+            <a href="https://facebook.com/[FACEBOOK]" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-80 transition hero-cta-text-shadow" aria-label="Facebook">
               <FacebookIcon />
             </a>
           </div>
@@ -78,28 +78,28 @@ export function HeroWithSidebar() {
 
       {/* Mobile: hamburger bar */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-3 px-4 rose-glass safe-top">
-        <Link href="/" className="flex w-16 h-16 items-center justify-center rounded-full overflow-hidden hero-cta-backdrop p-1.5">
-          <Image src="/beauty on tap logo.png" alt="Beauty on Tap Salon" width={64} height={64} className="object-contain logo-img" />
+        <Link href="/" className="flex w-20 h-20 items-center justify-center rounded-full overflow-hidden hero-cta-backdrop p-1">
+          <Image src="/beauty on tap logo.png" alt="Beauty on Tap Salon" width={80} height={80} className="object-contain logo-img" sizes="80px" quality={90} />
         </Link>
-        <button type="button" onClick={() => setMenuOpen(true)} className="touch-target text-white uppercase tracking-wider text-sm py-2 px-4 flex items-center justify-center" aria-label="Open menu">Menu</button>
+        <button type="button" onClick={() => setMenuOpen(true)} className="touch-target text-white uppercase tracking-wider text-sm py-2 px-4 flex items-center justify-center hero-cta-text-shadow" aria-label="Open menu">Menu</button>
       </div>
 
       {/* Mobile drawer */}
       {menuOpen && <div className="lg:hidden fixed inset-0 z-[60] bg-black/50" aria-hidden onClick={() => setMenuOpen(false)} />}
       <div className={`lg:hidden fixed top-0 right-0 z-[60] h-full w-[85%] max-w-[320px] rose-glass flex flex-col py-10 px-6 transition-transform duration-300 motion-reduce:duration-0 ${menuOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex justify-end">
-          <button type="button" onClick={() => setMenuOpen(false)} className="touch-target text-white uppercase tracking-wider text-sm p-2 flex items-center justify-center" aria-label="Close menu">Close</button>
+          <button type="button" onClick={() => setMenuOpen(false)} className="touch-target text-white uppercase tracking-wider text-sm p-2 flex items-center justify-center hero-cta-text-shadow" aria-label="Close menu">Close</button>
         </div>
         <nav className="flex flex-col gap-6 mt-6">
           {NAV_LINKS.map(({ label, href }) => (
-            <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="touch-target flex items-center text-white uppercase tracking-widest text-sm font-medium py-2">{label}</Link>
+            <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="touch-target flex items-center text-white uppercase tracking-widest text-sm font-semibold py-2 hero-cta-text-shadow">{label}</Link>
           ))}
         </nav>
         <div className="mt-auto flex gap-6">
-          <a href="https://instagram.com/[INSTAGRAM]" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-80 transition" aria-label="Instagram">
+          <a href="https://instagram.com/[INSTAGRAM]" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-80 transition hero-cta-text-shadow" aria-label="Instagram">
             <InstagramIcon />
           </a>
-          <a href="https://facebook.com/[FACEBOOK]" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-80 transition" aria-label="Facebook">
+          <a href="https://facebook.com/[FACEBOOK]" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-80 transition hero-cta-text-shadow" aria-label="Facebook">
             <FacebookIcon />
           </a>
         </div>

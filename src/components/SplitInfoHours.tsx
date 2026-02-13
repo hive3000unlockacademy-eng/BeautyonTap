@@ -38,7 +38,7 @@ export function SplitInfoHours() {
       </div>
 
       {/* Right: hours panel */}
-      <div className="rose-glass text-white py-8 lg:py-12 px-6 md:px-10 lg:px-12 flex flex-col justify-center">
+      <div className="rose-glass text-white hero-cta-text-shadow py-8 lg:py-12 px-6 md:px-10 lg:px-12 flex flex-col justify-center">
         <h3 className="text-lg font-semibold uppercase tracking-widest mb-6">
           Hours
         </h3>
